@@ -24,20 +24,6 @@ namespace BackupScheduleCreator
             sw.AutoFlush = true;
             var currentDate = new DateTime(2014, 7, 5);
 
-            //for(int i = 1; i < Convert.ToInt16(tapeCount) + 1; i++)
-            //{
-            //    var monthly = tape.Value.Day <= 7 ? "M" : "W";
-            //    var newExpiry = tape.Value.AddDays(28);
-            //    currentDate = tape.Value;
-
-            //    if (monthly == "M")
-            //        newExpiry = new DateTime(tape.Value.AddMonths(6).Year, tape.Value.AddMonths(6).Month, 1);
-
-            //    sw.WriteLine(string.Format("{0},{1},{2},{3}", tape.Value.ToString("MM/dd/yyyy"), tape.Key, monthly, newExpiry.ToString("MM/dd/yyyy")));
-
-            //    tapeList[tape.Key] = newExpiry;
-            //}
-
             for (int v = 0; v < 900; v++)
             {
                 var tape = tapeList.OrderBy(x => x.Value).Where(x => x.Value <= currentDate).Take(1).First();
